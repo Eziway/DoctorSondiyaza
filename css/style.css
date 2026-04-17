@@ -693,6 +693,34 @@ body {
   text-decoration: underline;
 }
 
+.hours-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.branch-hours {
+  padding: 10px 0;
+}
+
+.branch-hours strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #0d6efd;
+}
+
+.branch-hours p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .hours-section {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* FORM */
 .contact-form {
   background: #fff;
