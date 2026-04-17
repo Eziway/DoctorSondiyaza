@@ -10,24 +10,22 @@
             
 
             // Mobile Nav Toggle
-            const menuToggle = document.getElementById('mobile-menu-toggle');
-            const mainNav = document.getElementById('main-navigation');
-            if (menuToggle && mainNav) {
-                menuToggle.addEventListener('click', () => {
-                    const isExpanded = mainNav.classList.toggle('mobile-nav-active');
-                    menuToggle.classList.toggle('active');
-                    menuToggle.setAttribute('aria-expanded', isExpanded);
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const nav = document.querySelector('header nav');
+            if (hamburgerMenu && nav) {
+                hamburgerMenu.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                    hamburgerMenu.classList.toggle('active');
                 });
-                mainNav.querySelectorAll('a').forEach(link => {
+                
+                // Close menu when a link is clicked
+                nav.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
-                        if (mainNav.classList.contains('mobile-nav-active')) {
-                            mainNav.classList.remove('mobile-nav-active');
-                            menuToggle.classList.remove('active');
-                            menuToggle.setAttribute('aria-expanded', 'false');
-                        }
+                        nav.classList.remove('active');
+                        hamburgerMenu.classList.remove('active');
                     });
                 });
-            } else { console.warn("Mobile menu elements not found."); }
+            }
 
             // Testimonial Slider
             if (typeof Swiper !== 'undefined') {
