@@ -773,7 +773,7 @@ body {
   align-items: center;
   overflow: hidden;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('../images/hero-background.jpg') center/cover no-repeat;
+              url('../images/Hero.png') center/cover no-repeat;
 }
 
 /* HERO TEXT */
@@ -1203,24 +1203,45 @@ body {
 
 /* SERVICE CARD */
 .service-card {
-  background: #ffffff;
   border-radius: 14px;
+  background: transparent;
+  background-repeat: no-repeat;
   padding: 25px;
-
-  border: 1.5px solid rgba(13, 110, 253, 0.4);
-  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.06);
-
-  transition: all 0.3s ease;
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #0d6efd;
 }
 
-.service-card h3 {
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.service-text {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.service-text h3 {
   font-size: 17px;
   color: #0d6efd;
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
-.service-card p {
+.service-text p {
   font-size: 14.5px;
   color: #555;
   line-height: 1.6;
